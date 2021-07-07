@@ -1,0 +1,24 @@
+.main-container {
+  position: absolute;
+  background-color: rgb(41, 41, 41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  overflow: hidden;
+}
+
+.card-container {
+  position: absolute;
+  justify-content: center;
+  width: 75%;
+  height: 75%;
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+}
+
+@media (max-width: 785px) {
+  .card-container {
+    grid-template-columns: repeat(5, 60px);
+  }
+}
