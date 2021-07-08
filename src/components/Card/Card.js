@@ -13,10 +13,10 @@ const Card = ({value,id, flipped, selected, handleClick}) => {
         <div className="square-flipped squares" >
             <h3>{value}</h3>
         </div> : 
-        <div onClick={()=>returnSelected()} className={`square squares ${selected ? "square-selected" : ''}`} >
-            {!selected ? 
+        <div data-testid={"btn"} onClick={()=>returnSelected()} className={`square squares ${selected ? "square-selected" : ''}`} >
+            {selected ? 
             <h3>{value}</h3> : 
-            <h3>Card</h3>}
+            <h2>?</h2>}
         </div>}
         </>
     )

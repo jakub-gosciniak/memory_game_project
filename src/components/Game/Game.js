@@ -8,23 +8,27 @@ const Game = () => {
     const [cards, setCards] = useState([]);
 
     //INITAL CARD SETUP
-    useEffect(()=>{
+    const createCards= () => {
         let cards = [];
         for(let i=0;i<10;i++){
-            cards.push({value:i, selected:false, flipped: false})
+            cards.push({value:i})
         }
         cards = [...cards, ...cards].sort(()=> Math.random() - 0.5);
         setCards(cards)
+        return cards
+    }
+
+    useEffect(()=>{
+        createCards();
     },[])
 
-    //CHECK IF SELECTED CARDS MATCH
+    //CHECK IF SELECTED CARDS MATCH AND SET ACCORDING STATES
     useEffect(()=>{
         if(currentlySelected.length===2){
-            console.log({currentlySelected});
             if(currentlySelected[0][0] === currentlySelected[1][0] && currentlySelected[0][1] !== currentlySelected[1][1]){
                 setFlipped([...flipped,currentlySelected[0][1],currentlySelected[1][1]])
-                console.log({flipped})
                 setCurrentlySelected([]);
+                
             } else {
                 setTimeout(() => {
                     setCurrentlySelected([]);
@@ -36,27 +40,28 @@ const Game = () => {
     },[currentlySelected,flipped])
 
     
-    //CHECK IF CARD ID IN STATE
-    const isSelected = (id) => {
-        for(const v of currentlySelected){
-            if(v[1]===id){
-                return true;
-            }
-        }
-        return false;
-    }
-    
     //HANDLE VALUES FROM CHILD COMPONENT
     const onClickHandler = (value) => {
         !(currentlySelected.some(val=> {return val[1]===value[1]})) && currentlySelected.length<2 ? setCurrentlySelected([...currentlySelected, value]) : setCurrentlySelected(currentlySelected);
     }
 
+    const restartGame = () => {
+        createCards();
+        setFlipped([]);
+        setCurrentlySelected([]);
+    }
+
+
+
     return (
         <div className="main-container">
             <div className="card-container">
-                {flipped.length!==cards.length ? 
-                cards.map((card, id) => <Card value={card.value} key={id} id={id} handleClick={onClickHandler} selected={currentlySelected.some(val=> {return val[1]===id})} flipped={flipped.includes(id)} />)
-            : <h1>koniec!!!</h1>}
+                {flipped.length===cards.length && cards.length!==0? 
+                <div className="end-screen">
+                <h1>Go again?</h1>
+                    <button onClick={()=>{restartGame()}}>Start</button>
+                </div>
+            : cards.map((card, id) => <Card value={card.value} key={id} id={id} data-testid="0" handleClick={onClickHandler} selected={currentlySelected.some(val=> {return val[1]===id})} flipped={flipped.includes(id)} />)}
             </div>
         </div>
     )

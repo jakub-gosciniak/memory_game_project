@@ -1,6 +1,6 @@
 .main-container {
   position: absolute;
-  background-color: rgb(41, 41, 41);
+  background: #222b33;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,10 +15,49 @@
   height: 75%;
   display: grid;
   grid-template-columns: repeat(5, 150px);
+  row-gap: 5%;
 }
 
 @media (max-width: 785px) {
   .card-container {
-    grid-template-columns: repeat(5, 60px);
+    grid-template-columns: repeat(4, 1fr);
   }
+}
+
+.end-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-column: 1 / span 5;
+  color: #fff;
+  padding: 0;
+}
+
+@media (max-width: 785px) {
+  .end-screen {
+    grid-column: 1 / span 4;
+  }
+}
+
+button {
+  width: 6rem;
+  height: 3rem;
+  background: #78dec7;
+  background-image: -webkit-linear-gradient(top, #78dec7, #36ad92);
+  background-image: -moz-linear-gradient(top, #78dec7, #36ad92);
+  background-image: -ms-linear-gradient(top, #78dec7, #36ad92);
+  background-image: -o-linear-gradient(top, #78dec7, #36ad92);
+  background-image: -webkit-gradient(to bottom, #78dec7, #36ad92);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 1000;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  border: none;
 }
