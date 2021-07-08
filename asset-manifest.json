@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/jakub-gosciniak/memory_game_project.git/static/css/main.718bb578.chunk.css",
+    "main.js": "/jakub-gosciniak/memory_game_project.git/static/js/main.f10db541.chunk.js",
+    "main.js.map": "/jakub-gosciniak/memory_game_project.git/static/js/main.f10db541.chunk.js.map",
+    "runtime-main.js": "/jakub-gosciniak/memory_game_project.git/static/js/runtime-main.ae975471.js",
+    "runtime-main.js.map": "/jakub-gosciniak/memory_game_project.git/static/js/runtime-main.ae975471.js.map",
+    "static/js/2.d01c339b.chunk.js": "/jakub-gosciniak/memory_game_project.git/static/js/2.d01c339b.chunk.js",
+    "static/js/2.d01c339b.chunk.js.map": "/jakub-gosciniak/memory_game_project.git/static/js/2.d01c339b.chunk.js.map",
+    "static/js/3.f12160b6.chunk.js": "/jakub-gosciniak/memory_game_project.git/static/js/3.f12160b6.chunk.js",
+    "static/js/3.f12160b6.chunk.js.map": "/jakub-gosciniak/memory_game_project.git/static/js/3.f12160b6.chunk.js.map",
+    "index.html": "/jakub-gosciniak/memory_game_project.git/index.html",
+    "static/css/main.718bb578.chunk.css.map": "/jakub-gosciniak/memory_game_project.git/static/css/main.718bb578.chunk.css.map",
+    "static/js/2.d01c339b.chunk.js.LICENSE.txt": "/jakub-gosciniak/memory_game_project.git/static/js/2.d01c339b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ae975471.js",
+    "static/js/2.d01c339b.chunk.js",
+    "static/css/main.718bb578.chunk.css",
+    "static/js/main.f10db541.chunk.js"
+  ]
+}
